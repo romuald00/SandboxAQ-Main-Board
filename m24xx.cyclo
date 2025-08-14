@@ -1,0 +1,14 @@
+../Drivers/BSP/Components/M24xx/m24xx.c:115:9:M24_i2c_Init	2
+../Drivers/BSP/Components/M24xx/m24xx.c:130:9:M24_i2c_DeInit	2
+../Drivers/BSP/Components/M24xx/m24xx.c:146:9:M24_i2c_IsDeviceReady	1
+../Drivers/BSP/Components/M24xx/m24xx.c:159:9:M24_i2c_ReadByte	3
+../Drivers/BSP/Components/M24xx/m24xx.c:181:9:M24_i2c_ReadPage	3
+../Drivers/BSP/Components/M24xx/m24xx.c:203:9:M24_i2c_ReadData	3
+../Drivers/BSP/Components/M24xx/m24xx.c:225:9:M24_i2c_WriteByte	4
+../Drivers/BSP/Components/M24xx/m24xx.c:251:9:M24_i2c_WritePage	4
+../Drivers/BSP/Components/M24xx/m24xx.c:281:9:M24_i2c_WriteData	8
+../Drivers/BSP/Components/M24xx/m24xx.c:345:9:M24_i2c_WriteID	7
+../Drivers/BSP/Components/M24xx/m24xx.c:398:9:M24_i2c_ReadID	7
+../Drivers/BSP/Components/M24xx/m24xx.c:448:9:M24_i2c_LockID	4
+../Drivers/BSP/Components/M24xx/m24xx.c:474:9:M24_i2c_LockStatus	4
+../Drivers/BSP/Components/M24xx/m24xx.c:90:9:M24_RegisterBusIO	2

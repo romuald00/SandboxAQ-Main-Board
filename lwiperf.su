@@ -1,0 +1,15 @@
+../Core/Src/lwiperf.c:168:1:lwiperf_list_add	0	static
+../Core/Src/lwiperf.c:201:1:lwip_tcp_conn_report	48	static
+../Core/Src/lwiperf.c:537:1:lwiperf_tcp_accept	16	static
+../Core/Src/lwiperf.c:179:1:lwiperf_list_remove	16	static
+../Core/Src/lwiperf.c:221:1:lwiperf_tcp_close	8	static
+../Core/Src/lwiperf.c:509:1:lwiperf_tcp_err	8	static
+../Core/Src/lwiperf.c:248:1:lwiperf_tcp_client_send_more	24	static
+../Core/Src/lwiperf.c:518:1:lwiperf_tcp_poll	8	static
+../Core/Src/lwiperf.c:341:1:lwiperf_tcp_client_connected	16	static
+../Core/Src/lwiperf.c:326:1:lwiperf_tcp_client_sent	8	static
+../Core/Src/lwiperf.c:359:1:lwiperf_tx_start	32	static
+../Core/Src/lwiperf.c:406:1:lwiperf_tcp_recv	32	static
+../Core/Src/lwiperf.c:593:1:lwiperf_start_tcp_server	24	static
+../Core/Src/lwiperf.c:578:1:lwiperf_start_tcp_server_default	8	static
+../Core/Src/lwiperf.c:642:1:lwiperf_abort	16	static

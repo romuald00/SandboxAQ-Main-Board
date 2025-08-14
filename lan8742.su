@@ -1,0 +1,14 @@
+../Drivers/BSP/Components/lan8742/lan8742.c:61:22:LAN8742_RegisterBusIO	0	static
+../Drivers/BSP/Components/lan8742/lan8742.c:84:10:LAN8742_Init	24	static
+../Drivers/BSP/Components/lan8742/lan8742.c:139:9:LAN8742_DeInit	8	static
+../Drivers/BSP/Components/lan8742/lan8742.c:164:9:LAN8742_DisablePowerDownMode	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:194:9:LAN8742_EnablePowerDownMode	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:224:9:LAN8742_StartAutoNego	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:260:9:LAN8742_GetLinkState	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:352:9:LAN8742_SetLinkState	24	static
+../Drivers/BSP/Components/lan8742/lan8742.c:404:9:LAN8742_EnableLoopbackMode	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:434:9:LAN8742_DisableLoopbackMode	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:474:9:LAN8742_EnableIT	24	static
+../Drivers/BSP/Components/lan8742/lan8742.c:514:9:LAN8742_DisableIT	24	static
+../Drivers/BSP/Components/lan8742/lan8742.c:553:10:LAN8742_ClearIT	16	static
+../Drivers/BSP/Components/lan8742/lan8742.c:583:9:LAN8742_GetITStatus	16	static

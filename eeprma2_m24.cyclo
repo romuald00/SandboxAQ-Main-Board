@@ -1,0 +1,17 @@
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:449:16:M24C02_0_Probe	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:488:16:M24256_0_Probe	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:527:16:M24M01_0_Probe	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:54:9:EEPRMA2_M24_Init	7
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:95:9:EEPRMA2_M24_DeInit	3
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:121:9:EEPRMA2_M24_IsDeviceReady	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:143:9:EEPRMA2_M24_ReadByte	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:168:9:EEPRMA2_M24_ReadData	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:244:9:EEPRMA2_M24_WriteByte	3
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:567:6:EEPRMA2_M24MemorySizeLocator	4
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:192:9:EEPRMA2_M24_ReadPage	7
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:271:9:EEPRMA2_M24_WriteData	3
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:300:9:EEPRMA2_M24_WritePage	7
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:356:9:EEPRMA2_M24_WriteID	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:382:9:EEPRMA2_M24_ReadID	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:406:9:EEPRMA2_M24_LockStatus	2
+../Drivers/BSP/EEPRMA2/eeprma2_m24.c:428:9:EEPRMA2_M24_LockID	2

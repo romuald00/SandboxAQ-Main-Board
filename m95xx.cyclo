@@ -1,0 +1,16 @@
+../Drivers/BSP/Components/M95xx/m95xx.c:100:9:M95_spi_Init	2
+../Drivers/BSP/Components/M95xx/m95xx.c:116:9:M95_spi_DeInit	2
+../Drivers/BSP/Components/M95xx/m95xx.c:131:9:M95_spi_IsDeviceReady	1
+../Drivers/BSP/Components/M95xx/m95xx.c:142:9:M95_spi_ReadReg	1
+../Drivers/BSP/Components/M95xx/m95xx.c:153:9:M95_spi_WriteReg	1
+../Drivers/BSP/Components/M95xx/m95xx.c:167:9:M95_spi_ReadByte	3
+../Drivers/BSP/Components/M95xx/m95xx.c:211:9:M95_spi_ReadData	4
+../Drivers/BSP/Components/M95xx/m95xx.c:193:9:M95_spi_ReadPage	2
+../Drivers/BSP/Components/M95xx/m95xx.c:249:9:M95_spi_WriteByte	3
+../Drivers/BSP/Components/M95xx/m95xx.c:299:9:M95_spi_WriteData	9
+../Drivers/BSP/Components/M95xx/m95xx.c:279:9:M95_spi_WritePage	2
+../Drivers/BSP/Components/M95xx/m95xx.c:367:9:M95_spi_WriteID	6
+../Drivers/BSP/Components/M95xx/m95xx.c:421:9:M95_spi_ReadID	6
+../Drivers/BSP/Components/M95xx/m95xx.c:472:9:M95_spi_LockStatus	2
+../Drivers/BSP/Components/M95xx/m95xx.c:487:9:M95_spi_LockID	3
+../Drivers/BSP/Components/M95xx/m95xx.c:75:9:M95_RegisterBusIO	2

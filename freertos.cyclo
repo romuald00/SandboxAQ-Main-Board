@@ -1,0 +1,10 @@
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:144:24:inHandlerMode	1
+../Core/Src/freertos.c:69:13:configureTimerForRunTimeStats	1
+../Core/Src/freertos.c:74:22:getRunTimeCounterValue	1
+../Core/Src/freertos.c:81:13:vApplicationIdleHook	1
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:18:6:vApplicationStackOverflowHook	0
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:30:6:vApplicationGetIdleTaskMemory	1
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:42:6:vApplicationGetTimerTaskMemory	1
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:53:18:vTaskGetCustomRunTimeStats	5
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:134:25:getTaskName	2
+../../SAQ01_FW_COMMON/lib/src/freertos_incl.c:148:25:getcurrentTaskName	2
