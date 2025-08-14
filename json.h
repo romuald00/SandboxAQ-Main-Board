@@ -1,38 +1,24 @@
-/*
- * $Id: json.h,v 1.6 2006/01/26 02:16:28 mclark Exp $
- *
- * Copyright (c) 2004, 2005 Metaparadigm Pte. Ltd.
- * Michael Clark <michael@metaparadigm.com>
- * Copyright (c) 2009 Hewlett-Packard Development Company, L.P.
- *
- * This library is free software; you can redistribute it and/or modify
- * it under the terms of the MIT license. See COPYING for details.
- *
- */
+#pragma once
 
-/**
- * @file
- * @brief A convenience header that may be included instead of other individual ones.
- */
-#ifndef _json_h_
-#define _json_h_
+#include "arch.h"
+#include "str.h"
 
-#ifdef __cplusplus
-extern "C" {
+#ifndef MG_JSON_MAX_DEPTH
+#define MG_JSON_MAX_DEPTH 30
 #endif
 
-#include "arraylist.h"
-#include "debug.h"
-#include "json_c_version.h"
-#include "json_object.h"
-#include "json_object_iterator.h"
-#include "json_pointer.h"
-#include "json_tokener.h"
-#include "json_util.h"
-#include "linkhash.h"
+// Error return values - negative. Successful returns are >= 0
+enum { MG_JSON_TOO_DEEP = -1, MG_JSON_INVALID = -2, MG_JSON_NOT_FOUND = -3 };
+int mg_json_get(struct mg_str json, const char *path, int *toklen);
 
-#ifdef __cplusplus
-}
-#endif
+struct mg_str mg_json_get_tok(struct mg_str json, const char *path);
+bool mg_json_get_num(struct mg_str json, const char *path, double *v);
+bool mg_json_get_bool(struct mg_str json, const char *path, bool *v);
+long mg_json_get_long(struct mg_str json, const char *path, long dflt);
+char *mg_json_get_str(struct mg_str json, const char *path);
+char *mg_json_get_hex(struct mg_str json, const char *path, int *len);
+char *mg_json_get_b64(struct mg_str json, const char *path, int *len);
 
-#endif
+bool mg_json_unescape(struct mg_str str, char *buf, size_t len);
+size_t mg_json_next(struct mg_str obj, size_t ofs, struct mg_str *key,
+                    struct mg_str *val);
