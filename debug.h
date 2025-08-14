@@ -1,65 +1,94 @@
+/*
+ * $Id: debug.h,v 1.5 2006/01/30 23:07:57 mclark Exp $
+ *
+ * Copyright (c) 2004, 2005 Metaparadigm Pte. Ltd.
+ * Michael Clark <michael@metaparadigm.com>
+ * Copyright (c) 2009 Hewlett-Packard Development Company, L.P.
+ *
+ * This library is free software; you can redistribute it and/or modify
+ * it under the terms of the MIT license. See COPYING for details.
+ *
+ */
+
 /**
  * @file
- * Definition of the debug API.
- *
- * Copyright Nuvation Research Corporation 2012-2017. All Rights Reserved.
- * www.nuvation.com
+ * @brief Do not use, json-c internal, may be changed or removed at any time.
  */
+#ifndef _JSON_C_DEBUG_H_
+#define _JSON_C_DEBUG_H_
 
-#ifndef NUVC_DEBUG_H_
-#define NUVC_DEBUG_H_
+#include <stdlib.h>
 
-typedef enum { ERR = 0, WARN, LOG, NUM_DEBUG_LEVELS } DebugLevel;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-/**
- * Outputs a debug log message to stdout (*see below) along with the file and
- * line
- * number identifying the location of the message in the source code. Called as
- * if it were a function.
- *
- * Example usage: DBG(LOG, "myInt has value: %d", myInt);
- *
- * *In the case of the simulator output will be redirected to a FILE stream if
- *  it is invoked with the appropriate -f argument.
- *
- * Implementation Notes:
- *  - The if(DEBUG_ENABLED) is a test against a constant known at compile time.
- *    This means the code will be optimized out when DEBUG_ENABLED = 0, but
- *    with the advantage that the code is still evaluated by the compiler.
- *
- * @param[in] LVL       The debug level of the log message. When the
- * DEBUG_LEVEL
- *                      definition is set to a level below that of the message,
- *                      the message will not be printed.
- * @param[in] STRING    The debug log message to print
- *                      (uses printf() formatting)
- * @param[in] ...       Optional formatting arguments for printf(). The
- *                      available options depend on the implementation of
- *                      printf() on the target platform.
- */
-#define DBG(LVL, ...)                                                                                                  \
+#ifndef JSON_EXPORT
+#if defined(_MSC_VER) && defined(JSON_C_DLL)
+#define JSON_EXPORT __declspec(dllexport)
+#else
+#define JSON_EXPORT extern
+#endif
+#endif
+
+JSON_EXPORT void mc_set_debug(int debug);
+JSON_EXPORT int mc_get_debug(void);
+
+JSON_EXPORT void mc_set_syslog(int syslog);
+
+JSON_EXPORT void mc_debug(const char *msg, ...);
+JSON_EXPORT void mc_error(const char *msg, ...);
+JSON_EXPORT void mc_info(const char *msg, ...);
+
+#ifndef __STRING
+#define __STRING(x) #x
+#endif
+
+#ifndef PARSER_BROKEN_FIXED
+
+#define JASSERT(cond)                                                                                                  \
     do {                                                                                                               \
-        if (DEBUG_ENABLED) {                                                                                           \
-            if (LVL <= DEBUG_LEVEL) {                                                                                  \
-                PrintDebug(LVL, __FILE__, __LINE__, __VA_ARGS__);                                                      \
-            }                                                                                                          \
+    } while (0)
+
+#else
+
+#define JASSERT(cond)                                                                                                  \
+    do {                                                                                                               \
+        if (!(cond)) {                                                                                                 \
+            mc_error("cjson assert failure %s:%d : cond \"" __STRING(cond) "failed\n", __FILE__, __LINE__);            \
+            *(int *)0 = 1;                                                                                             \
+            abort();                                                                                                   \
         }                                                                                                              \
     } while (0)
 
-/**
- * Platform specific configuration:
- * toggle this to 0 to remove debug logging from the code.
- */
-#define DEBUG_ENABLED 1
-/**
- * Platform specific configuration:
- * controls the verbosity of the debug output (if it is enabled).
- */
-#define DEBUG_LEVEL LOG
+#endif
 
-/**
- * Prints a debug message to the appropriate destination.
- */
-extern void PrintDebug(DebugLevel lvl, const char *file, int line, const char *format, ...);
+#define MC_ERROR(x, ...) mc_error(x, ##__VA_ARGS__)
 
-#endif /* NUVC_DEBUG_H_ */
+#ifdef MC_MAINTAINER_MODE
+#define MC_SET_DEBUG(x) mc_set_debug(x)
+#define MC_GET_DEBUG() mc_get_debug()
+#define MC_SET_SYSLOG(x) mc_set_syslog(x)
+#define MC_DEBUG(x, ...) mc_debug(x, ##__VA_ARGS__)
+#define MC_INFO(x, ...) mc_info(x, ##__VA_ARGS__)
+#else
+#define MC_SET_DEBUG(x)                                                                                                \
+    if (0)                                                                                                             \
+    mc_set_debug(x)
+#define MC_GET_DEBUG() (0)
+#define MC_SET_SYSLOG(x)                                                                                               \
+    if (0)                                                                                                             \
+    mc_set_syslog(x)
+#define MC_DEBUG(x, ...)                                                                                               \
+    if (0)                                                                                                             \
+    mc_debug(x, ##__VA_ARGS__)
+#define MC_INFO(x, ...)                                                                                                \
+    if (0)                                                                                                             \
+    mc_info(x, ##__VA_ARGS__)
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
